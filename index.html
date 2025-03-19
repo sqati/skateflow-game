@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Skate Flow</title>
+</head>
+
+<body>
+    <!-- canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- message -->
+    <div id="message-container">
+        <div id="message"></div>
+    </div>
+
+    <!-- pause -->
+    <div id="pause">PAUSE</div>
+
+    <!-- header -->
+    <div id="header">
+        <div class="controls">
+            <div id="btnSound" title="Sound (M)" ontouchstart><img src="images/sound.svg"></div>
+            <div id="btnScreen" title="Fullscreen (ENTER)" ontouchstart><img src="images/fullscreen.svg"></div>
+            <div id="btnOptions" title="Options (O)" ontouchstart><img src="images/options.svg"></div>
+            <div id="btnBack" title="Back (ESCAPE)" ontouchstart><img src="images/back.svg"></div>
+            <div id="btnPause" title="Pause (P)" ontouchstart><img src="images/play.svg"></div>
+        </div>
+    </div>
+
+    <!-- options -->
+    <div id="options" class="modal">
+        <div class="table">
+            <div class="table-cell">
+                <div class="content">
+                    <div class="title">OPTIONS</div>
+
+                    <h2>Power Preference</h2>
+                    <div class="toggle">
+                        <label>
+                            <input type="radio" name="option-power" value="0" />
+                            <span>Default</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="option-power" value="1" />
+                            <span>High performance</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="option-power" value="2" />
+                            <span>Low power</span>
+                        </label>
+                    </div>
+                    <div class="label">reload required</div>
+
+                    <h2>Graphics Quality</span></h2>
+                    <div class="toggle">
+                        <label>
+                            <input type="radio" name="option-resolution" value="0" />
+                            <span>High</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="option-resolution" value="1" />
+                            <span>Medium</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="option-resolution" value="2" />
+                            <span>Low</span>
+                        </label>
+                    </div>
+                    <div class="label">reload required</div>
+
+                    <h2>Anti-Aliasing</h2>
+                    <div class="toggle">
+                        <label>
+                            <input type="radio" name="option-antialias" value="0" />
+                            <span>Off</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="option-antialias" value="1" />
+                            <span>On</span>
+                        </label>
+                    </div>
+                    <div class="label">reload required</div>
+
+                    <div class="button">OK</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- orientation -->
+    <div id="orientation">ROTATE</div>
+
+    <!-- loader -->
+    <div id="loader">
+        <div>
+            <div class="container">
+                <img src="images/logo.jpg">
+                <svg viewBox="-5 -5 310 310" style="transform:rotate(-90deg)">
+                    <circle r="140" cx="150" cy="150" fill="transparent" stroke="#fff" stroke-width="16"></circle>
+                    <circle id="loader-progress" r="140" cx="150" cy="150" stroke="transparent" stroke-width="10"
+                        stroke-linecap="round" stroke-dashoffset="879.2" fill="transparent" stroke-dasharray="879.2">
+                    </circle>
+                </svg>
+            </div>
+
+            <div id="loader-status">Loading</div>
+        </div>
+    </div>
+
+    <!-- Add WalletConnect dependencies before your other scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js"></script>
+    
+    <!-- Replace the existing ethers.js script tag with this one -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    
+    <!-- js -->
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
